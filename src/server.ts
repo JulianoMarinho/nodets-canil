@@ -18,7 +18,8 @@ server.use(express.static(path.join(__dirname, '../public')));//pasta de arquivo
 server.use(mainRoutes);
 
 server.use((req, res)=>{
-    res.send('Página não encontrada!');
+    res.render('pages/404');
 });
 
+console.log(`Servidor rodando na porta: ${process.env.PORT}`);
 server.listen(process.env.PORT);
